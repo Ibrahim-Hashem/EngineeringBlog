@@ -6,6 +6,10 @@
     height:250px;
     border-radius: 5px;
     box-shadow: 1px 1px 13px -10px #000000;
+    
+}
+.article_card :hover{
+    cursor: pointer;
 }
 .article_card h2 {
     color: grey;
