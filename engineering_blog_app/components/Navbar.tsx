@@ -1,9 +1,10 @@
-import React from 'react'
+import Link from 'next/link'
+import navStyles from '../styles/Navbar.module.css';
+
 
 const Navbar = () => {
     return (
         <>
-            <nav></nav> 
         </>
     )
 }
