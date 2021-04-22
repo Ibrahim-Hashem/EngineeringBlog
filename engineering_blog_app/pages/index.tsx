@@ -13,6 +13,7 @@ export default function Home({articles}) {
       <Navbar/>
       <Main articles={articles}/>
     </>
+
   )
 }
 export const getStaticProps: GetStaticProps = async () => {
