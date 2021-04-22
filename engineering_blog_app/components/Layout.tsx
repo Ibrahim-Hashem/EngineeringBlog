@@ -1,6 +1,7 @@
 import styles from '../styles/Layout.module.css';
 import Nav from '../components/Navbar';
-import Header from '../components/Header'
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const Layout = ({children}) => {
   return (
@@ -11,6 +12,7 @@ const Layout = ({children}) => {
         <main className={styles.main}>
           {children}
         </main>
+      <Footer />
     </div>
     </>
   )
