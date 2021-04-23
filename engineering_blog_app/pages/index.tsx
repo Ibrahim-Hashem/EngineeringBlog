@@ -4,6 +4,8 @@ import {GetStaticProps} from 'next'
 import Navbar from '../components/Navbar';
 import Main from '../components/Main';
 
+// import {ArticleInterface} from '../interfaces/articles';
+
 export default function Home({articles}) {
   return (
     <>
