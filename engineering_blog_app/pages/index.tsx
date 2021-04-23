@@ -17,7 +17,7 @@ export default function Home({articles}) {
   )
 }
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('../data.json');
+  const res = await fetch('http://localhost:3000/api/posts');
   const articles = await res.json();
   console.log(res);
 
