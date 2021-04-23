@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import MainStyles from '../styles/Main.module.css';
 import Article from './Article'
-
 import { ArticleInterface } from '../interfaces/articles';
 
 const Main = ({articles}) => {
