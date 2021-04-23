@@ -11,18 +11,19 @@ export default function Home({articles}) {
         <title>Engineering blog</title>
       </Head>
       <Navbar/>
-      <Main articles={articles}/>
+      {/* <Main articles={articles}/> */}
     </>
 
   )
 }
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`);
-  const articles = await res.json();
+  // const articles = await res.json();
+  console.log(res);
 
   return {
     props: {
-      articles
+      // articles
     }
   }
 }
