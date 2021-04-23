@@ -9,7 +9,7 @@ const Main = ({articles}) => {
         <>
         {articles.map((article: ArticleInterface) => {
             return (
-                <Link key={article.id} article={article} href={`/${article.id}`}>
+                <Link key={article.id} href={`/${article.id}`}>
                     <div className={MainStyles.main}>
                         <Article article={article}/>
                     </div>
