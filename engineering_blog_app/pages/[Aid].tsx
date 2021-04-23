@@ -1,12 +1,14 @@
 import {useRouter} from 'next/router'
+import Style from '../styles/ArticlePage.module.css'
 
 const Article = ({articles})=>{
     const router = useRouter()
     const { Aid }= router.query;
     const article = articles.filter(article => article.id.toString() === Aid);
     return (
-      <div> 
+      <div className={Style.main}> 
         <h1>{article[0].title}</h1>
+        <p><span>{article[0].userId}</span></p>
         <p>{article[0].body}</p>
       </div>
     )
