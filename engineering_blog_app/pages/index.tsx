@@ -4,6 +4,9 @@ import {GetStaticProps} from 'next'
 import Navbar from '../components/Navbar';
 import Main from '../components/Main';
 
+import {ArticleInterface} from '../interfaces/articles';
+
+
 export default function Home({articles}) {
   return (
     <>
@@ -18,9 +21,9 @@ export default function Home({articles}) {
 }
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch('http://localhost:3000/api/posts');
-  const articles = await res.json();
-  console.log(res);
-
+  
+  const articles: ArticleInterface = await res.json();
+  
   return {
     props: {
       articles
