@@ -1,7 +1,15 @@
+import { Interface } from 'node:readline';
 import React from 'react'
 import ArticleStyles from '../styles/Article.module.css';
 
-const Article = ({article}) => {
+interface ArticleInterface {
+    id: number;
+    userId: number;
+    title: string;
+    body:string;
+
+}
+const Article :ArticleInterface = ({article}) => {
     return (
 
             <div className={ArticleStyles.article_card} id={article.id}>

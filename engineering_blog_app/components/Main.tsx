@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import MainStyles from '../styles/Main.module.css';
-import Article from './Article'
+
 
 const Main = ({articles}) => {
     return (
