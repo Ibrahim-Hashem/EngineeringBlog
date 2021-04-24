@@ -1,11 +1,7 @@
 import Link from 'next/link';
 import MainStyles from '../styles/Main.module.css';
-<<<<<<< HEAD
-
-=======
-import Article from './Article'
-import { ArticleInterface } from '../interfaces/articles';
->>>>>>> 6610a9a257af6a526d9360e827c6d1078e85b790
+import Article from './Article';
+import { ArticleInterface} from '../interfaces/articles';
 
 const Main = ({articles}) => {
     return (
