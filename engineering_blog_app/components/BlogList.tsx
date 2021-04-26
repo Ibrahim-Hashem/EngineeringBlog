@@ -34,7 +34,7 @@ const BlogList = ( {blogs} ) => {
   return (
     <div className={styles.container}>
       {blogs.map((blog) => {
-        console.log(blog.title)
+        // console.log(blog.title)
         return (
           <BlogCard blogToShow={blog} />
         )

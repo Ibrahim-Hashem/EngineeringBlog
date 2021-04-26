@@ -44,7 +44,7 @@ export function getStaticProps() {
     return { ...data}
 
   })
-  console.log(blogs)
+  // console.log(blogs)
   
 
   return {
