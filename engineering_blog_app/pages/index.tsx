@@ -16,7 +16,6 @@ export default function Home({blogs}) {
       <Head>
         <title>Engineering blog</title>
       </Head>
-      <Navbar/>
       <BlogList blogs={blogs}/>
     </>
 
