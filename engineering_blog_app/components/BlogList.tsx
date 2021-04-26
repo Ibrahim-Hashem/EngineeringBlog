@@ -4,6 +4,8 @@ import Article from './Article'
 import BlogCard from './BlogCard'
 import { ArticleInterface } from '../interfaces/articles';
 
+import styles from '../styles/BlogList.module.css'
+
 // const Main = ({blogs}) => {
 //     return (
 //         <>
@@ -29,14 +31,14 @@ import { ArticleInterface } from '../interfaces/articles';
 const BlogList = ( {blogs} ) => {
   
   return (
-    <>
+    <div className={styles.container}>
       {blogs.map((blog) => {
         console.log(blog.title)
         return (
           <BlogCard blogToShow={blog} />
         )
       })}
-    </>
+    </div>
   )
 }
 
