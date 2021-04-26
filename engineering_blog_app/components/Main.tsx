@@ -4,10 +4,10 @@ import Article from './Article'
 
 import { ArticleInterface } from '../interfaces/articles';
 
-const Main = ({articles}) => {
+const Main = ({blogs}) => {
     return (
         <>
-        {articles.map((article: ArticleInterface) => {
+        {/* {articles.map((article: ArticleInterface) => {
             return (
                 <Link key={article.id} href={`/${article.id}`}>
                     <div className={MainStyles.main}>
@@ -15,7 +15,9 @@ const Main = ({articles}) => {
                     </div>
                 </Link>
             )
-        })}
+        })} */}
+        {console.log(blogs)}
+        <h1>Hello</h1>
         </>
     )
 }
