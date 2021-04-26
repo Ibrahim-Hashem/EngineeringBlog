@@ -17,7 +17,7 @@ export default function Home({blogs}) {
         <title>Engineering blog</title>
       </Head>
       <Navbar/>
-      <Main articles={blogs}/>
+      <Main blogs={blogs}/>
     </>
 
   )
@@ -34,40 +34,27 @@ export default function Home({blogs}) {
 //   }
 // }
 
-export const getStaticProps = () => {
-
-  let blogsList = {}
+export function getStaticProps() {
 
   const fs = require('fs');
-  const fileNames = fs.readdirSync(`${process.cwd()}/Blogs`);
-  // console.log(fileNames);
+  const files = fs.readdirSync(`${process.cwd()}/Blogs`);
 
-  const blogs = fileNames.map((file) => {
+  const blogs = files
+    .map((file) => {
     const filePath = `${process.cwd()}/blogs/${file}`;
-    // console.log('#############')
-    // console.log(filePath);
-    // console.log('#############')
     
     const blogData = fs.readFileSync(filePath, 'utf-8'); 
-    // console.log('#############')
-    // console.log(blogData);
-    // console.log('#############')
-    // const { data } = grayMatter(blogData);
-    return grayMatter(blogData)
-    // console.log({data})
-    // console.log('#############')
-    // console.log({ data })
-    // console.log('#############')
-    // console.log(blogData);
-    // console.log('#############')
-    // return { ...data};
+
+    const { data } = grayMatter(blogData);
+
+    return { ...data}
+
   })
-  // console.log('#############')
-  // console.log(blogs);
-  // console.log('#############')
+  console.log(blogs)
+  
 
   return {
-    props: { ...blogs} 
+    props: { blogs } 
   }
 }
 

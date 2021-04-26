@@ -7,16 +7,20 @@ import { ArticleInterface } from '../interfaces/articles';
 const Main = ({blogs}) => {
     return (
         <>
-        {/* {articles.map((article: ArticleInterface) => {
+        {blogs.map((blog) => {
             return (
-                <Link key={article.id} href={`/${article.id}`}>
+                <Link  href={`/${blog.slug}`}>
                     <div className={MainStyles.main}>
-                        <Article article={article}/>
+                      {blog.title}
+                      <br />
+                      {blog.author}
+                      <br />
+                      {blog.date}
+                        {/* <Article article={blog}/> */}
                     </div>
                 </Link>
             )
-        })} */}
-        {console.log(blogs)}
+        })}
         <h1>Hello</h1>
         </>
     )
