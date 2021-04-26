@@ -2,6 +2,9 @@ import {useRouter} from 'next/router'
 import Style from '../styles/ArticlePage.module.css'
 import grayMatter from 'gray-matter';
 import fs from 'fs';
+import unified from 'unified';
+import html from 'remark-html';
+import markdownParser from 'remark-parse';
 
 const Article = ({blog})=>{
   // const router = useRouter()
@@ -21,7 +24,8 @@ const Article = ({blog})=>{
          <h1>{blog.title}</h1>
          <p>{blog.author}</p>
          <p>{blog.date}</p>
-         <p>{blog.body}</p>
+         {/* <p>{blog.body}</p> */}
+         <section dangerouslySetInnerHTML={{ __html: blog.body }}></section>
        </div>
     )
 }
@@ -32,7 +36,7 @@ const Article = ({blog})=>{
 //   return {props: {articles}}
 // }
 
-export function getStaticProps(context) {
+export async function getStaticProps(context) {
   const files = fs.readdirSync(`${process.cwd()}/blogs`);
 
   const blogs = files
@@ -41,11 +45,17 @@ export function getStaticProps(context) {
     const {content, data} = grayMatter(blog)
     // console.log(content)
     // console.log(data)
+    const markdownOutput = await unified()
+      .use(markdownParser)
+      .use(html)
+      .process(content)
+
+      console.log(markdownOutput);
   return {
     props: {
       blog: {
         ...data,
-        body: content
+        body: markdownOutput.toString()
       }
     } 
   }
