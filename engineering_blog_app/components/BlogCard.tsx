@@ -1,10 +1,14 @@
+import Link from 'next/Link';
+
 const BlogCard = ({blogToShow}) => {
   return (
-    <div>
-      <h1>{blogToShow.title}</h1>
-      <p>{blogToShow.author}</p>
-      <p>{blogToShow.date}</p>
-    </div>
+      <Link href={`/${blogToShow.slug}`}>
+        <a>
+          <h1>{blogToShow.title}</h1>
+          <p>{blogToShow.author}</p>
+          <p>{blogToShow.date}</p>
+        </a>
+      </Link>
   )
 }
 
