@@ -5,7 +5,7 @@ import Head from 'next/head'
 import {GetStaticProps} from 'next'
 // import styles from '../styles/Home.module.css'
 import Navbar from '../components/Navbar';
-import BlogList from '../components/Main';
+import BlogList from '../components/BlogList';
 
 import {ArticleInterface} from '../interfaces/articles';
 
