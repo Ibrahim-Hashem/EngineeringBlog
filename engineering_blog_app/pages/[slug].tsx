@@ -5,7 +5,7 @@ import fs from 'fs';
 
 const Article = ({blog})=>{
   // const router = useRouter()
-  
+  console.log(blog)
   // const { slug } = router.query;
   // console.log("###########")
   // console.log(slug)
@@ -17,9 +17,12 @@ const Article = ({blog})=>{
       //   <p><span>{blog[0].author}</span></p>
       //   <p>{blog[0].date}</p>
       // </div>
-      <>
-       { blog }
-      </>
+       <div>
+         <h1>{blog.title}</h1>
+         <p>{blog.author}</p>
+         <p>{blog.date}</p>
+         <p>{blog.body}</p>
+       </div>
     )
 }
 
@@ -28,30 +31,23 @@ const Article = ({blog})=>{
 //   const articles = await res.json();
 //   return {props: {articles}}
 // }
+
 export function getStaticProps(context) {
-  console.log("###########")
-  console.log(context.params)
-  console.log("###########")
   const files = fs.readdirSync(`${process.cwd()}/blogs`);
 
   const blogs = files
-    .map((file) => {
-
-    const filePath = `${process.cwd()}/blogs/${file}`;
-    
+    // const filePath = `${process.cwd()}/blogs/${file}`;
     const blog = fs.readFileSync(`${process.cwd()}/blogs/${context.params.slug}.md`, 'utf-8')
-    // const blogData = fs.readFileSync(filePath, 'utf-8'); 
-
-    // const { data } = grayMatter(blogData);
-    console.log("###########")
-    console.log(blog);
-    console.log("###########")
-    return { blog }
-
-  })
-  // console.log(blogs)
+    const {content, data} = grayMatter(blog)
+    // console.log(content)
+    // console.log(data)
   return {
-    props: {blogs}  //{[{}]}
+    props: {
+      blog: {
+        ...data,
+        body: content
+      }
+    } 
   }
 }
 
