@@ -1,4 +1,3 @@
-import React from 'react'
 import ArticleStyles from '../styles/Article.module.css';
 
 const Article = ({article}) => {

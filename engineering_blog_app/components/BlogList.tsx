@@ -1,6 +1,7 @@
 import Link from 'next/link';
+
 import MainStyles from '../styles/Main.module.css';
-import Article from './Article'
+
 import BlogCard from './BlogCard'
 import { ArticleInterface } from '../interfaces/articles';
 

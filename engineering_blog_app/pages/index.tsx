@@ -1,10 +1,6 @@
 import grayMatter from 'gray-matter';
-// import matter = require('gray-matter');
-// import fs from 'fs';
+import fs from 'fs';
 import Head from 'next/head'
-import {GetStaticProps} from 'next'
-// import styles from '../styles/Home.module.css'
-import Navbar from '../components/Navbar';
 import BlogList from '../components/BlogList';
 
 import {ArticleInterface} from '../interfaces/articles';
@@ -35,7 +31,6 @@ export default function Home({blogs}) {
 
 export function getStaticProps() {
 
-  const fs = require('fs');
   const files = fs.readdirSync(`${process.cwd()}/Blogs`);
 
   const blogs = files
