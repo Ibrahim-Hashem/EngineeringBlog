@@ -31,7 +31,7 @@ export default function Home({blogs}) {
 
 export function getStaticProps() {
 
-  const files = fs.readdirSync(`${process.cwd()}/Blogs`);
+  const files = fs.readdirSync(`${process.cwd()}/blogs`);
 
   const blogs = files
     .map((file) => {
@@ -48,7 +48,7 @@ export function getStaticProps() {
   
 
   return {
-    props: { blogs } 
+    props: {blogs}  //{[{}]}
   }
 }
 
