@@ -1,11 +1,12 @@
 .article_card{
     border: 1px solid none;
-    width:50vw;
+    width:80%;
     padding: 15px;
     margin:30px;
     height:250px;
     border-radius: 5px;
     box-shadow: 1px 1px 13px -10px #000000;
+    text-align: center;
     
 }
 .article_card :hover{
