@@ -1,7 +1,7 @@
 ---
-title: My first blog
-slug: new-blog
-date: 21-04-2020
+title: The second blog
+slug: second-blog
+date: 26-04-2020
 author: "Connor"
 ---
 

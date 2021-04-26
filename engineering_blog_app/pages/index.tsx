@@ -5,7 +5,7 @@ import Head from 'next/head'
 import {GetStaticProps} from 'next'
 // import styles from '../styles/Home.module.css'
 import Navbar from '../components/Navbar';
-import Main from '../components/Main';
+import BlogList from '../components/Main';
 
 import {ArticleInterface} from '../interfaces/articles';
 
@@ -17,7 +17,7 @@ export default function Home({blogs}) {
         <title>Engineering blog</title>
       </Head>
       <Navbar/>
-      <Main blogs={blogs}/>
+      <BlogList blogs={blogs}/>
     </>
 
   )
