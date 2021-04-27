@@ -6,7 +6,7 @@ import unified from 'unified';
 import html from 'remark-html';
 import markdownParser from 'remark-parse';
 
-const Article = ({blog})=>{
+const Blog = ({blog})=>{
     return (
        <div>
          <h1>{blog.title}</h1>
@@ -50,4 +50,4 @@ export async function getStaticPaths(){
   }
 }
 
-export default Article
+export default Blog
