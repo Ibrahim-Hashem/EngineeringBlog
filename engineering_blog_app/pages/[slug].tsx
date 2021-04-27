@@ -37,8 +37,8 @@ export async function getStaticProps(context) {
   }
 }
 
-export async function getStaticPaths(){
-  const files = await fs.readdirSync(`${process.cwd()}/blogs`);
+export function getStaticPaths(){
+  const files = fs.readdirSync(`${process.cwd()}/blogs`);
   const blogs = files
     .map((file) => {
     return {params: {slug: file.replace(".md", "")} }
