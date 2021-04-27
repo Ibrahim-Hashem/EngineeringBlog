@@ -6,14 +6,11 @@ import unified from 'unified';
 import html from 'remark-html';
 import markdownParser from 'remark-parse';
 
-const Blog = ({blog})=>{
+import Blog from '../components/Blog';
+
+const BlogPage = (props)=>{
     return (
-       <div>
-         <h1>{blog.title}</h1>
-         <p>{blog.author}</p>
-         <p>{blog.date}</p>
-         <section dangerouslySetInnerHTML={{ __html: blog.body }}></section>
-       </div>
+      <Blog blog={props.blog} />
     )
 }
 
@@ -50,4 +47,4 @@ export function getStaticPaths(){
   }
 }
 
-export default Blog
+export default BlogPage
