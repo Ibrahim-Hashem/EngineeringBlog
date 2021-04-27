@@ -17,17 +17,6 @@ export default function Home({blogs}) {
 
   )
 }
-// export const getStaticProps: GetStaticProps = async () => {
-//   const res = await fetch('http://localhost:3000/api/posts');
-  
-//   const articles: ArticleInterface = await res.json();
-  
-//   return {
-//     props: {
-//       articles
-//     }
-//   }
-// }
 
 export function getStaticProps() {
 
@@ -35,20 +24,14 @@ export function getStaticProps() {
 
   const blogs = files
     .map((file) => {
-    const filePath = `${process.cwd()}/blogs/${file}`;
-    
+    const filePath = `${process.cwd()}/blogs/${file}`; 
     const blogData = fs.readFileSync(filePath, 'utf-8'); 
-
     const { data } = grayMatter(blogData);
-
     return { ...data}
-
   })
-  // console.log(blogs)
-  
 
   return {
-    props: {blogs}  //{[{}]}
+    props: {blogs} 
   }
 }
 
